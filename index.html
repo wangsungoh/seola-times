@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeolA Times</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 15px;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+        .date {
+            font-style: italic;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        .nav {
+            border-bottom: 1px solid #000;
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+        .nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .nav ul li {
+            margin: 0 15px;
+        }
+        .nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+        .main-article {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .main-article h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-top: 0;
+            font-weight: 700;
+        }
+        .main-article img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .article {
+            margin-bottom: 30px;
+        }
+        .article h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .article img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .article p {
+            font-size: 16px;
+            margin-top: 0;
+        }
+        .secondary-articles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        @media (max-width: 768px) {
+            .main-article, .secondary-articles {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">SeolA Times</h1>
+            <div class="date">2024년 8월 16일 금요일</div>
+        </header>
+        
+        <nav class="nav">
+            <ul>
+                <li><a href="#">홈</a></li>
+                <li><a href="#">가족 소식</a></li>
+                <li><a href="#">요리</a></li>
+                <li><a href="#">여행</a></li>
+                <li><a href="#">취미</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <article class="main-article">
+                <div>
+                    <h2>가족 여름 휴가: 제주도에서의 잊지 못할 추억</h2>
+                    <p>지난 주, 우리 가족은 아름다운 제주도에서 일주일간의 휴가를 보냈습니다. 에메랄드빛 바다, 푸른 오름, 그리고 현무암 해변이 어우러진 제주도의 풍경은 우리 모두에게 깊은 인상을 남겼습니다.</p>
+                    <p>특히 아이들은 해변에서 조개를 줍고 모래성을 쌓으며 즐거운 시간을 보냈습니다. 우리는 한라산 등반, 성산일출봉 일출 감상, 그리고 제주 전통 시장 방문 등 다양한 활동을 통해 제주도의 자연과 문화를 만끽했습니다.</p>
+                </div>
+                <img src="/api/placeholder/600/400" alt="제주도 가족 여행 사진">
+            </article>
+
+            <div class="secondary-articles">
+                <article class="article">
+                    <h3>할머니의 비밀 레시피: 된장찌개</h3>
+                    <img src="/api/placeholder/400/300" alt="할머니의 된장찌개">
+                    <p>할머니께서 대대로 전해 내려오는 된장찌개 비법을 공개해 주셨습니다. 특별한 재료와 조리 방법으로 만든 이 된장찌개는 가족 모두의 입맛을 사로잡았습니다.</p>
+                </article>
+
+                <article class="article">
+                    <h3>아빠의 주말 목공 프로젝트</h3>
+                    <img src="/api/placeholder/400/300" alt="아빠의 목공 작품">
+                    <p>아빠가 주말 동안 진행한 목공 프로젝트가 완성되었습니다. 손수 제작한 원목 테이블은 이제 우리 거실의 새로운 중심 장소가 되었습니다.</p>
+                </article>
+
+                <article class="article">
+                    <h3>동생의 첫 피아노 연주회</h3>
+                    <img src="/api/placeholder/400/300" alt="동생의 피아노 연주">
+                    <p>지난 토요일, 동생이 첫 피아노 연주회를 가졌습니다. 6개월 동안 열심히 준비한 베토벤의 '엘리제를 위하여'를 아름답게 연주해 큰 박수를 받았습니다.</p>
+                </article>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
