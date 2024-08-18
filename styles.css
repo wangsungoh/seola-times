@@ -128,3 +128,124 @@ p {
         margin-top: 10px;
     }
 }
+
+@media print {
+    /* 기존 인쇄 스타일은 유지합니다 */
+
+    .header {
+        position: relative;
+        text-align: center;
+        border-bottom: 1pt solid #000;
+        padding-bottom: 10pt;
+        margin-bottom: 20pt;
+    }
+
+    .logo {
+        font-size: 24pt;
+        margin-bottom: 5pt;
+    }
+
+    .date {
+        font-size: 10pt;
+        margin-bottom: 10pt;
+    }
+
+    .qr-code {
+        position: static;
+        display: block;
+        margin-top: 10pt;
+        text-align: center;
+    }
+
+    .qr-image {
+        width: 60pt;
+        height: 60pt;
+    }
+
+    .qr-code a {
+        display: block;
+        font-size: 8pt;
+        margin-top: 5pt;
+    }
+
+    /* 페이지 여백 조정 */
+    @page {
+        margin: 0.5cm;
+    }
+
+    /* 첫 페이지에만 헤더 표시 */
+    .header {
+        position: running(header);
+    }
+
+    @page :first {
+        @top-center {
+            content: element(header);
+        }
+    }
+}
+
+@media print {
+    /* 기존 인쇄 스타일 유지 */
+
+    body {
+        font-size: 10pt; /* 기본 폰트 크기를 줄임 */
+        line-height: 1.2; /* 줄 간격을 줄임 */
+    }
+
+    .container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .news-article {
+        page-break-inside: avoid; /* 기사가 페이지 중간에서 잘리지 않도록 함 */
+        page-break-after: always; /* 각 기사 뒤에 페이지 나누기 */
+        margin-bottom: 0; /* 기사 간 여백 제거 */
+        height: 100vh; /* 뷰포트 높이만큼 기사 높이 설정 */
+        overflow: hidden; /* 내용이 넘치면 숨김 */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .news-article h2 {
+        font-size: 14pt;
+        margin-top: 0;
+        margin-bottom: 10pt;
+    }
+
+    .news-article p {
+        font-size: 10pt;
+        margin-bottom: 5pt;
+    }
+
+    .article-image {
+        max-height: 40vh; /* 이미지 최대 높이 제한 */
+        width: auto;
+        object-fit: contain; /* 이미지 비율 유지 */
+        margin-bottom: 10pt;
+    }
+
+    /* 불필요한 요소 숨기기 */
+    .secondary-articles, nav, .ad, .comments, .footer {
+        display: none;
+    }
+
+    /* 페이지 여백 조정 */
+    @page {
+        margin: 1cm;
+    }
+
+    /* 첫 페이지에만 헤더 표시 */
+    .header {
+        position: running(header);
+    }
+
+    @page :first {
+        @top-center {
+            content: element(header);
+        }
+    }
+}
